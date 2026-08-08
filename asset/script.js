@@ -167,8 +167,7 @@ function initTypingEffect() {
   
   const phrases = [
     'Welcome To Website XI.1 Saintek',
-    'Kelas Lantai 3',
-    'Bersama Kita Bisa! 💪'
+    'Kelas Lantai 3'
   ];
   
   let currentPhraseIndex = 0;
@@ -228,7 +227,7 @@ function initStudentsSection() {
   if (!studentsGrid) return;
   
   const students = [
-    { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', icon: 'fas fa-user' },
+    { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', icon: 'fas fa-user-tie' },
     { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', icon: 'fas fa-user' },
     { name: 'Bagus Raditya Faturrahman', gender: 'Laki-Laki', icon: 'fas fa-user' },
     { name: 'Damar Cahyo Panuluh', gender: 'Laki-Laki', icon: 'fas fa-user' },
