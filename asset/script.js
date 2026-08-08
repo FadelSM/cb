@@ -289,8 +289,8 @@ function initHomeroomSection() {
   if (!homeroomGrid) return;
   
   const homeroom = {
-    name: 'Ibu Afrinawati, M.Pd',
-    role: 'Wali Kelas XI-1 Saintek',
+    name: 'Bu Afrinawati, M.Pd',
+    role: 'Wali Kelas XI.1 Saintek',
     subject: 'Guru',
     icon: 'fas fa-chalkboard-teacher'
   };
