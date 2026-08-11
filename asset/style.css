@@ -1192,10 +1192,11 @@ button {
 .gallery-item {
   background-color: var(--bg-gray);
   border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   text-align: center;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
+  overflow: hidden;
 }
 
 .dark-mode .gallery-item {
@@ -1207,17 +1208,26 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
-.gallery-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-full);
-  margin: 0 auto 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: var(--primary);
-  background-color: rgba(126, 34, 206, 0.1);
+/* Container & Foto Gambar */
+.gallery-img-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
 }
 
 .gallery-item h3 {
@@ -1228,6 +1238,31 @@ button {
 .gallery-item p {
   color: var(--text-light);
   font-size: 0.95rem;
+}
+
+/* ===== Video / Live Photo Styling ===== */
+.gallery-media-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+/* Efek zoom saat video di-hover */
+.gallery-media-link:hover .gallery-video {
+  transform: scale(1.05);
 }
 
 /* ===== Contact Section ===== */
