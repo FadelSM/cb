@@ -1244,7 +1244,7 @@ button {
 .gallery-media-link {
   display: block;
   width: 100%;
-  height: 100px;
+  height: 200px;
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 1rem;
