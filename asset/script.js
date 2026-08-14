@@ -268,13 +268,16 @@ function initStudentsSection() {
     const genderIcon = student.gender === 'Laki-Laki' ? 'fas fa-mars' : 'fas fa-venus';
     
     card.innerHTML = `
-      <div class="student-avatar" style="background: linear-gradient(135deg, ${genderColor}, ${genderColor}cc); overflow: hidden; display: flex; align-items: center; justify-content: center;">
-        <img src="${student.image}" alt="${student.name}" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <h3 class="student-name">${student.name}</h3>
-      <p class="student-gender"><i class="${genderIcon}"></i> ${student.gender}</p>
-      <span class="student-badge">Siswa XI-1</span>
-    `;
+  <div class="student-avatar" style="background: linear-gradient(135deg, ${genderColor}, ${genderColor}cc);">
+    <i class="${student.icon}"></i>
+  </div>
+  <h3 class="student-name">${student.name}</h3>
+  <p class="student-gender">
+    <img src="src/icon-gender.png" alt="icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+    ${student.gender}
+  </p>
+  <span class="student-badge">Siswa XI-1</span>
+`;
     
     studentsGrid.appendChild(card);
   });
