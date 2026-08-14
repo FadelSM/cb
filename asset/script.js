@@ -227,36 +227,36 @@ function initStudentsSection() {
   if (!studentsGrid) return;
   
   const students = [
-    { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar' },
-    { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar' },
-    { name: 'Bagus Raditya Faturrahman', gender: 'Laki-Laki', image: 'src/bagus' },
-    { name: 'Damar Cahyo Panuluh', gender: 'Laki-Laki', image: 'src/damar' },
-    { name: 'Dewi Thoatika Nurjanah', gender: 'Perempuan', image: 'src/dewi' },
-    { name: 'Eka Puspita Novita Damayanti', gender: 'Perempuan', image: 'src/puspit' },
-    { name: 'Evan Al Rasyid', gender: 'Laki-Laki', image: 'src/evan' },
-    { name: 'Fadel Shafwan Maliki', gender: 'Laki-Laki', image: 'src/fadel' },
-    { name: 'Faqih Arya Pasha', gender: 'Laki-Laki', image: 'src/faqih' },
-    { name: 'Fazril Ilyas', gender: 'Laki-Laki', image: 'src/fazril' },
-    { name: 'Firdaus Ilham', gender: 'Laki-Laki', image: 'src/ilham' },
-    { name: 'Fitri Lailan Najmi', gender: 'Perempuan', image: 'src/fitri' },
-    { name: 'Intan Aliyana', gender: 'Perempuan', image: 'src/intan' },
-    { name: 'Jenius Hosevan Simon Panjaitan', gender: 'Laki-Laki', image: 'src/jenius' },
-    { name: 'Kayla Khalidah Tajudin', gender: 'Perempuan', image: 'src/kayla' },
-    { name: 'Keyla Nur Hasanah', gender: 'Perempuan', image: 'src/keyla' },
-    { name: 'Khoirul Anisa Putri', gender: 'Perempuan', image: 'src/kep' },
-    { name: 'Lequinsha Zalyandra Bilqis', gender: 'Perempuan', image: 'src/requin' },
-    { name: 'Lintang Azzalea Pratama', gender: 'Perempuan', image: 'src/lintang' },
-    { name: 'Lutfiah Thalita Azmi', gender: 'Perempuan', image: 'src/tata' },
-    { name: 'Miftah Khoiron Ramadhan', gender: 'Laki-Laki', image: 'src/miftah' },
-    { name: 'Moura Dealova Kanza Adiba T.', gender: 'Perempuan', image: 'src/moura' },
-    { name: 'Muhammad Rizky Maulana', gender: 'Laki-Laki', image: 'src/jajat' },
-    { name: 'Nabilla Oktavia Andini', gender: 'Perempuan', image: 'src/okta' },
+    { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar.jpg' },
+    { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar.jpg' },
+    { name: 'Bagus Raditya Faturrahman', gender: 'Laki-Laki', image: 'src/bagus.jpg' },
+    { name: 'Damar Cahyo Panuluh', gender: 'Laki-Laki', image: 'src/damar.jpg' },
+    { name: 'Dewi Thoatika Nurjanah', gender: 'Perempuan', image: 'src/dewi.jpg' },
+    { name: 'Eka Puspita Novita Damayanti', gender: 'Perempuan', image: 'src/puspit.jpg' },
+    { name: 'Evan Al Rasyid', gender: 'Laki-Laki', image: 'src/evan.jpg' },
+    { name: 'Fadel Shafwan Maliki', gender: 'Laki-Laki', image: 'src/fadel.jpg' },
+    { name: 'Faqih Arya Pasha', gender: 'Laki-Laki', image: 'src/faqih.jpg' },
+    { name: 'Fazril Ilyas', gender: 'Laki-Laki', image: 'src/fazril.jpg' },
+    { name: 'Firdaus Ilham', gender: 'Laki-Laki', image: 'src/ilham.jpg' },
+    { name: 'Fitri Lailan Najmi', gender: 'Perempuan', image: 'src/fitri.jpg' },
+    { name: 'Intan Aliyana', gender: 'Perempuan', image: 'src/intan.jpg' },
+    { name: 'Jenius Hosevan Simon Panjaitan', gender: 'Laki-Laki', image: 'src/jenius.jpg' },
+    { name: 'Kayla Khalidah Tajudin', gender: 'Perempuan', image: 'src/kayla.jpg' },
+    { name: 'Keyla Nur Hasanah', gender: 'Perempuan', image: 'src/keyla.jpg' },
+    { name: 'Khoirul Anisa Putri', gender: 'Perempuan', image: 'src/kep.jpg' },
+    { name: 'Lequinsha Zalyandra Bilqis', gender: 'Perempuan', image: 'src/lequin.jpg' },
+    { name: 'Lintang Azzalea Pratama', gender: 'Perempuan', image: 'src/lintang.jpg' },
+    { name: 'Lutfiah Thalita Azmi', gender: 'Perempuan', image: 'src/tata.jpg' },
+    { name: 'Miftah Khoiron Ramadhan', gender: 'Laki-Laki', image: 'src/miftah.jpg' },
+    { name: 'Moura Dealova Kanza Adiba T.', gender: 'Perempuan', image: 'src/moura.jpg' },
+    { name: 'Muhammad Rizky Maulana', gender: 'Laki-Laki', image: 'src/jajat.jpg' },
+    { name: 'Nabilla Oktavia Andini', gender: 'Perempuan', image: 'src/okta.jpg' },
     { name: 'Nova Zaidah', gender: 'Perempuan', image: 'src/nova' },
-    { name: 'Rayiandra Abinaya', gender: 'Laki-Laki', image: 'src/abi' },
-    { name: 'Rizqi Khoiril Ibad', gender: 'Laki-Laki', image: 'src/aril' },
-    { name: 'Steven Febrian Pratama', gender: 'Laki-Laki', image: 'src/steven' },
-    { name: 'Zafir Raihan Basri', gender: 'Laki-Laki', image: 'src/zafir' },
-    { name: 'Zalfa Zahirah', gender: 'Perempuan', image: 'src/zalfa' }
+    { name: 'Rayiandra Abinaya', gender: 'Laki-Laki', image: 'src/abi.jpg' },
+    { name: 'Rizqi Khoiril Ibad', gender: 'Laki-Laki', image: 'src/aril.jpg' },
+    { name: 'Steven Febrian Pratama', gender: 'Laki-Laki', image: 'src/steven.jpg' },
+    { name: 'Zafir Raihan Basri', gender: 'Laki-Laki', image: 'src/zafir.jpg' },
+    { name: 'Zalfa Zahirah', gender: 'Perempuan', image: 'src/zalfa.jpg' }
   ];
   
   students.forEach((student, index) => {
@@ -268,16 +268,15 @@ function initStudentsSection() {
     const genderIcon = student.gender === 'Laki-Laki' ? 'fas fa-mars' : 'fas fa-venus';
     
     card.innerHTML = `
-  <div class="student-avatar" style="background: linear-gradient(135deg, ${genderColor}, ${genderColor}cc);">
-    <i class="${student.icon}"></i>
-  </div>
-  <h3 class="student-name">${student.name}</h3>
-  <p class="student-gender">
-    <img src="src/.jpg" alt="icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
-    ${student.gender}
-  </p>
-  <span class="student-badge">Siswa XI-1</span>
-`;
+      <div class="student-avatar" style="background: linear-gradient(135deg, ${genderColor}, ${genderColor}cc); overflow: hidden;">
+        <img src="${student.image}" alt="${student.name}" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <h3 class="student-name">${student.name}</h3>
+      <p class="student-gender">
+        <i class="${genderIcon}"></i> ${student.gender}
+      </p>
+      <span class="student-badge">Siswa XI-1</span>
+    `;
     
     studentsGrid.appendChild(card);
   });
