@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabsSystem();
     initStudentsSection();
     initHomeroomSection();
+    initGallerySlider();
     initCurrentYear();
     initStarsBackground();
     
@@ -316,6 +317,40 @@ function initCurrentYear() {
     yearElement.textContent = new Date().getFullYear();
   }
 }
+
+// Inisialisasi Slider Gallery (Swiper)
+function initGallerySlider() {
+  if (typeof Swiper !== 'undefined' && document.querySelector('.gallery-slider')) {
+    new Swiper('.gallery-slider', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 5000, // Durasi 5 detik per slide sebelum otomatis pindah
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
+}
+
 
 // Stars Background
 function initStarsBackground() {
