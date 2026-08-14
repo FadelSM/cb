@@ -235,7 +235,7 @@ function initStudentsSection() {
     { name: 'Eka Puspita Novita Damayanti', gender: 'Perempuan', image: 'src/puspit' },
     { name: 'Evan Al Rasyid', gender: 'Laki-Laki', image: 'src/evan' },
     { name: 'Fadel Shafwan Maliki', gender: 'Laki-Laki', image: 'src/fadel' },
-    { name: 'Faqih Arya Pasha', gender: 'Laki-Laki', image: 'faqih' },
+    { name: 'Faqih Arya Pasha', gender: 'Laki-Laki', image: 'src/faqih' },
     { name: 'Fazril Ilyas', gender: 'Laki-Laki', image: 'src/fazril' },
     { name: 'Firdaus Ilham', gender: 'Laki-Laki', image: 'src/ilham' },
     { name: 'Fitri Lailan Najmi', gender: 'Perempuan', image: 'src/fitri' },
@@ -273,7 +273,7 @@ function initStudentsSection() {
   </div>
   <h3 class="student-name">${student.name}</h3>
   <p class="student-gender">
-    <img src="src/icon-gender.png" alt="icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+    <img src="src/.jpg" alt="icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
     ${student.gender}
   </p>
   <span class="student-badge">Siswa XI-1</span>
