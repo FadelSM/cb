@@ -1494,6 +1494,87 @@ button {
   transform: translateY(-3px);
 }
 
+/* ===== Penambahan Style Swiper Gallery & Video ===== */
+.gallery-slider {
+  padding-bottom: 3.5rem !important;
+}
+
+.gallery-item {
+  background-color: var(--bg-gray);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  height: auto;
+}
+
+.dark-mode .gallery-item {
+  background-color: var(--bg-dark);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Container Image Link & Foto */
+.gallery-img-link {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Video Styling */
+.gallery-media-link {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.gallery-media-link:hover .gallery-video {
+  transform: scale(1.05);
+}
+
+/* Kustomisasi Warna Panah & Titik Navigasi Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero-title {
