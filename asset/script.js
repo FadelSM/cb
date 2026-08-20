@@ -251,7 +251,7 @@ function initStudentsSection() {
     { name: 'Moura Dealova Kanza Adiba T.', gender: 'Perempuan', image: 'src/moura.jpg' },
     { name: 'Muhammad Rizky Maulana', gender: 'Laki-Laki', image: 'src/jajat.jpg' },
     { name: 'Nabilla Oktavia Andini', gender: 'Perempuan', image: 'src/okta.jpg' },
-    { name: 'Nova Zaidah', gender: 'Perempuan', image: 'src/nova' },
+    { name: 'Nova Zaidah', gender: 'Perempuan', image: 'src/nova.jpg' },
     { name: 'Rayiandra Abinaya', gender: 'Laki-Laki', image: 'src/abi.jpg' },
     { name: 'Rizqi Khoiril Ibad', gender: 'Laki-Laki', image: 'src/aril.jpg' },
     { name: 'Steven Febrian Pratama', gender: 'Laki-Laki', image: 'src/steven.jpg' },
