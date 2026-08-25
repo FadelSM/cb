@@ -69,6 +69,14 @@
             <span>Kontak</span>
           </a>
         </div>
+
+        <div class="gallery-tabs" style="display: flex; justify: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+  <button class="gallery-tab-btn active" data-filter="all">Semua</button>
+  <button class="gallery-tab-btn" data-filter="random">Random</button>
+  <button class="gallery-tab-btn" data-filter="olahraga">Olahraga</button>
+  <button class="gallery-tab-btn" data-filter="tiktokan">TikTokan</button>
+  <button class="gallery-tab-btn" data-filter="ambis">Ambis</button>
+  </div>
         
         <div class="navbar-actions">
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -459,7 +467,7 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="random">
           <a href="src/foto11.jpg" class="gallery-img-link">
             <img src="src/foto11.jpg" alt="Foto Bareng Walas" class="gallery-img">
           </a>
