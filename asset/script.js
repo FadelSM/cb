@@ -12,11 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     initTabsSystem();
     initStudentsSection();
-    initGalleryFilter();
     initHomeroomSection();
     initCurrentYear();
     initStarsBackground();
-    initGalleryModal();
     
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -106,16 +104,8 @@ function initNavigation() {
   });
   
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      if (mobileMenu.classList.contains('active')) {
-        closeMobileMenu();
-      }
-      const modal = document.getElementById('media-modal');
-      if (modal && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-        body.classList.remove('no-scroll');
-        document.getElementById('modal-body-container').innerHTML = '';
-      }
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      closeMobileMenu();
     }
   });
   
@@ -292,31 +282,6 @@ function initStudentsSection() {
   });
 }
 
-function initGalleryFilter() {
-  const filterBtns = document.querySelectorAll('.gallery-tab-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Ubah status aktif tombol
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      // Filter item galeri
-      galleryItems.forEach(item => {
-        const category = item.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
 // Homeroom Section
 function initHomeroomSection() {
   const homeroomGrid = document.querySelector('.homeroom-grid');
@@ -380,51 +345,4 @@ function initStarsBackground() {
     
     starsContainer.appendChild(star);
   }
-}
-
-// Lightbox Modal Galeri (Video & Foto TikTok)
-function initGalleryModal() {
-  const modal = document.getElementById('media-modal');
-  const modalClose = document.getElementById('modal-close');
-  const modalBody = document.getElementById('modal-body-container');
-  const modalTitle = document.getElementById('modal-title');
-  const modalDesc = document.getElementById('modal-desc');
-
-  if (!modal) return;
-
-  const galleryItems = document.querySelectorAll('.gallery-item');
-
-  galleryItems.forEach(item => {
-    const link = item.querySelector('a');
-    const title = item.querySelector('h3') ? item.querySelector('h3').textContent : '';
-    const desc = item.querySelector('p') ? item.querySelector('p').textContent : '';
-
-    if (link) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const src = link.getAttribute('href');
-        const isVideo = src.endsWith('.mp4');
-
-        modalBody.innerHTML = isVideo 
-          ? `<video src="${src}" controls autoplay loop style="width:100%;"></video>`
-          : `<img src="${src}" alt="${title}">`;
-
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        modal.classList.add('active');
-        document.body.classList.add('no-scroll');
-      });
-    }
-  });
-
-  function closeModal() {
-    modal.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-    modalBody.innerHTML = '';
-  }
-
-  modalClose.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
 }
