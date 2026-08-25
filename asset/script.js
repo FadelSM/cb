@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     initTabsSystem();
     initStudentsSection();
+    initGalleryFilter();
     initHomeroomSection();
     initCurrentYear();
     initStarsBackground();
@@ -288,6 +289,31 @@ function initStudentsSection() {
     `;
     
     studentsGrid.appendChild(card);
+  });
+}
+
+function initGalleryFilter() {
+  const filterBtns = document.querySelectorAll('.gallery-tab-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Ubah status aktif tombol
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      // Filter item galeri
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
   });
 }
 
