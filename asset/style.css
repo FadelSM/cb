@@ -1455,7 +1455,7 @@ button {
 }
 
 .footer-social {
-  display: flex;
+  display: inline-flex;
   gap: 1rem;
 }
 
