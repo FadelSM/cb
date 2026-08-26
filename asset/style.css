@@ -1294,11 +1294,11 @@ button {
 
 /* ===== Contact Section ===== */
 .contact-section {
-  background-color: var(--bg-gray);
+  background-color: transparent;
 }
 
 .dark-mode .contact-section {
-  background-color: var(--bg-dark);
+  background-color: transparent;
 }
 
 .contact-cards {
