@@ -1295,10 +1295,12 @@ button {
 /* ===== Contact Section ===== */
 .contact-section {
   background-color: var(--bg-gray);
+   display: none;
 }
 
 .dark-mode .contact-section {
   background-color: var(--bg-dark);
+   display: none;
 }
 
 .contact-cards {
@@ -1455,7 +1457,7 @@ button {
 }
 
 .footer-social {
-  display: table;
+  display: flex;
   gap: 1rem;
 }
 
