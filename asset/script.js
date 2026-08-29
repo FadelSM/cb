@@ -167,7 +167,8 @@ function initTypingEffect() {
   
   const phrases = [
     'Welcome To Website XI.1 Saintek',
-    'Kelas Lantai 3'
+    'Kelas Lantai 3',
+    'Pengembang Web FadelSM'
   ];
   
   let currentPhraseIndex = 0;
