@@ -3,6 +3,8 @@
  * Website Kelas SMA PGRI 3 Jakarta
  */
 
+let typingTimeout = null;
+
 document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHomeroomSection();
     initCurrentYear();
     initStarsBackground();
+    initLanguageSwitcher();
     
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -160,16 +163,24 @@ function initNavigation() {
   }
 }
 
-// Typing Effect
+// Typing Effect (Supports Multi-Language)
 function initTypingEffect() {
   const typingElement = document.getElementById('typing-text');
   if (!typingElement) return;
   
-  const phrases = [
+  const currentLang = localStorage.getItem('language') || 'id';
+  
+  const phrases = currentLang === 'en' ? [
     'Welcome To Website XI.1 Saintek',
+    '3rd Floor Class',
+    'Web Developer FadelSM'
+  ] : [
+    'Selamat datang di Website XI.1 Saintek',
     'Kelas Lantai 3',
     'Pengembang Web FadelSM'
   ];
+  
+  if (typingTimeout) clearTimeout(typingTimeout);
   
   let currentPhraseIndex = 0;
   let currentCharIndex = 0;
@@ -198,7 +209,7 @@ function initTypingEffect() {
       currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
     }
     
-    setTimeout(typeText, typingSpeed);
+    typingTimeout = setTimeout(typeText, typingSpeed);
   }
   
   typeText();
@@ -222,11 +233,14 @@ function initTabsSystem() {
   });
 }
 
-// Students Section
+// Students Section (Dynamic Language)
 function initStudentsSection() {
   const studentsGrid = document.querySelector('.students-grid');
   if (!studentsGrid) return;
+  studentsGrid.innerHTML = '';
   
+  const currentLang = localStorage.getItem('language') || 'id';
+
   const students = [
     { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar.jpg' },
     { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar.jpg' },
@@ -265,8 +279,11 @@ function initStudentsSection() {
     card.className = 'student-card';
     card.style.animationDelay = `${index * 50}ms`;
     
-    const genderColor = student.gender === 'Laki-Laki' ? '#4f46e5' : '#ec4899';
-    const genderIcon = student.gender === 'Laki-Laki' ? 'fas fa-mars' : 'fas fa-venus';
+    const isMale = student.gender === 'Laki-Laki';
+    const genderColor = isMale ? '#4f46e5' : '#ec4899';
+    const genderIcon = isMale ? 'fas fa-mars' : 'fas fa-venus';
+    const genderText = currentLang === 'en' ? (isMale ? 'Male' : 'Female') : student.gender;
+    const badgeText = currentLang === 'en' ? 'Student of XI-1' : 'Siswa XI-1';
     
     card.innerHTML = `
       <div class="student-avatar" style="background: linear-gradient(135deg, ${genderColor}, ${genderColor}cc); overflow: hidden;">
@@ -274,41 +291,36 @@ function initStudentsSection() {
       </div>
       <h3 class="student-name">${student.name}</h3>
       <p class="student-gender">
-        <i class="${genderIcon}"></i> ${student.gender}
+        <i class="${genderIcon}"></i> ${genderText}
       </p>
-      <span class="student-badge">Siswa XI-1</span>
+      <span class="student-badge">${badgeText}</span>
     `;
     
     studentsGrid.appendChild(card);
   });
 }
 
-// Homeroom Section
+// Homeroom Section (Dynamic Language)
 function initHomeroomSection() {
   const homeroomGrid = document.querySelector('.homeroom-grid');
   if (!homeroomGrid) return;
   
-  const homeroom = {
-    name: 'Bu Afrinawati, M.Pd',
-    role: 'Wali Kelas XI.1 Saintek',
-    subject: 'Guru',
-    icon: 'fas fa-chalkboard-teacher'
-  };
-  
-  const card = document.createElement('div');
-  card.className = 'homeroom-card';
-  
-  card.innerHTML = `
-    <div class="homeroom-icon">
-      <i class="${homeroom.icon}"></i>
+  const currentLang = localStorage.getItem('language') || 'id';
+  const roleText = currentLang === 'en' ? 'Homeroom Teacher of XI.1 Saintek' : 'Wali Kelas XI.1 Saintek';
+  const subjectText = currentLang === 'en' ? 'Teacher' : 'Guru';
+  const badgeText = currentLang === 'en' ? 'Class Advisor' : 'Pembimbing Kelas';
+
+  homeroomGrid.innerHTML = `
+    <div class="homeroom-card">
+      <div class="homeroom-icon">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <h3 class="homeroom-name">Bu Afrinawati, M.Pd</h3>
+      <p class="homeroom-role">${roleText}</p>
+      <p class="homeroom-subject">${subjectText}</p>
+      <span class="homeroom-badge">${badgeText}</span>
     </div>
-    <h3 class="homeroom-name">${homeroom.name}</h3>
-    <p class="homeroom-role">${homeroom.role}</p>
-    <p class="homeroom-subject">${homeroom.subject}</p>
-    <span class="homeroom-badge">Pembimbing Kelas</span>
   `;
-  
-  homeroomGrid.appendChild(card);
 }
 
 // Current Year
@@ -346,4 +358,236 @@ function initStarsBackground() {
     
     starsContainer.appendChild(star);
   }
+}
+
+// Language Switcher Engine
+function initLanguageSwitcher() {
+  const translations = {
+    id: {
+      "preloader.loading": "Loading...",
+      "nav.about": "Tentang",
+      "nav.students": "Siswa",
+      "nav.homeroom": "Wali Kelas",
+      "nav.gallery": "Galeri",
+      "nav.contact": "Kontak",
+
+      "hero.desc": "Selamat datang di website resmi kelas <span class=\"text-highlight\">XI.1 Saintek</span> SMA PGRI 3 Jakarta. Kelas yang penuh <span class=\"text-highlight\">prestasi</span> dan <span class=\"text-highlight\">kebersamaan</span>.",
+      "hero.btnAbout": "Tentang Kelas",
+      "hero.btnStudents": "Lihat Siswa",
+      "hero.scroll": "Scroll ke bawah",
+
+      "about.sectionTitlePrefix": "Tentang",
+      "about.sectionSubtitle": "Mengenal lebih dekat kelas kebanggaan SMA PGRI 3 Jakarta",
+      "about.tabStory": "Profil Kelas",
+      "about.tabMission": "Visi & Misi",
+      "about.tabApproach": "Karakter",
+
+      "about.profileTitle": "Profil Kelas XI.1 Saintek",
+      "about.profileP1": "<strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>18 siswa laki-laki</strong> dan <strong>15 siswa perempuan</strong> yang memiliki semangat belajar tinggi.",
+      "about.profileP2": "Kami adalah generasi muda yang siap menghadapi tantangan masa depan dengan bekal ilmu pengetahuan, keterampilan, dan karakter yang kuat. Di kelas ini, kami belajar bukan hanya untuk nilai, tetapi untuk menjadi pribadi yang bermanfaat bagi masyarakat.",
+      "about.profileP3": "Dengan bimbingan dari Ibu Afrinawati, M.Pd sebagai wali kelas, kami selalu berusaha memberikan yang terbaik dalam setiap kegiatan akademik maupun non-akademik.",
+
+      "mission.mainTitle": "Visi & Misi",
+      "mission.visionTitle": "Visi",
+      "mission.visionText": "Menjadi kelas unggulan yang mencetak generasi cerdas, berkarakter, dan berprestasi di bidang sains dan teknologi.",
+      "mission.missionTitle": "Misi",
+      "mission.val1Title": "Berprestasi",
+      "mission.val1Desc": "Meningkatkan prestasi akademik dan non-akademik di berbagai bidang",
+      "mission.val2Title": "Berkarakter",
+      "mission.val2Desc": "Membangun karakter yang jujur, disiplin, dan bertanggung jawab",
+      "mission.val3Title": "Bersolidaritas",
+      "mission.val3Desc": "Menjalin kebersamaan dan gotong royong antar sesama siswa",
+
+      "char.mainTitle": "Karakter Kelas",
+      "char.c1Title": "Cerdas & Kritis",
+      "char.c1Desc": "Kami selalu berusaha untuk berpikir kritis dalam memecahkan masalah dan terus mengasah kemampuan berpikir logis.",
+      "char.c2Title": "Peduli & Berbagi",
+      "char.c2Desc": "Kami memiliki kepedulian tinggi terhadap sesama dan selalu siap membantu teman yang membutuhkan.",
+      "char.c3Title": "Inovatif & Kreatif",
+      "char.c3Desc": "Kami selalu berinovasi dan berkreasi dalam berbagai kegiatan untuk menghasilkan karya terbaik.",
+      "char.c4Title": "Kompetitif & Sportif",
+      "char.c4Desc": "Kami menjunjung tinggi sportivitas dalam setiap kompetisi dan berusaha menjadi yang terbaik dengan cara yang sehat.",
+
+      "homeroom.titlePrefix": "Wali",
+      "homeroom.titleHighlight": "Kelas",
+      "homeroom.subtitle": "Penggerak dan pembimbing XI-1 Saintek",
+
+      "students.titlePrefix": "Siswa",
+      "students.unit": "siswa",
+
+      "schedule.titlePrefix": "Jadwal Pelajaran",
+      "schedule.subtitle": "Jadwal kegiatan belajar",
+      "day.monday": "Senin",
+      "day.tuesday": "Selasa",
+      "day.wednesday": "Rabu",
+      "day.thursday": "Kamis",
+      "day.friday": "Jumat",
+
+      "subject.mtktl": "MTK TL",
+      "subject.religion": "AGAMA",
+      "subject.biology": "BIOLOGI",
+      "subject.mtkwajib": "MTK WAJIB",
+      "subject.chemistry": "KIMIA",
+      "subject.history": "SEJARAH",
+      "subject.art": "SENI RUPA",
+      "subject.english": "B.INGGRIS",
+      "subject.counseling": "BK",
+      "subject.civics": "PKN",
+      "subject.physics": "FISIKA",
+      "subject.indonesian": "B.INDONESIA",
+      "subject.pe": "PENJAS",
+
+      "gallery.titlePrefix": "Galeri",
+      "gallery.titleHighlight": "Kelas",
+      "gallery.g1Title": "Foto Bareng Walas",
+      "gallery.g1Desc": "Fotbar XI.1 Saintek",
+      "gallery.g2Title": "Kegiatan Olahraga",
+      "gallery.g2Desc": "Suasana Fotbar Olahraga XI.1 Saintek",
+      "gallery.g3Title": "Kegiatan Olahraga Lompat Tali",
+      "gallery.g4Title": "Kegiatan Senirupa",
+      "gallery.g4Desc": "Suit Maju duluan presentasi",
+      "gallery.g5Title": "Lomba",
+      "gallery.g5Desc": "Lomba Sarung Terbang XI.1 Saintek",
+      "gallery.g6Title": "Lomba",
+      "gallery.g6Desc": "Lomba Estafet Sarung XI.1 Saintek",
+      "gallery.g7Title": "Lomba",
+      "gallery.g7Desc": "Lomba Magic Speed Number XI.1 Saintek",
+      "gallery.g8Title": "Lomba",
+      "gallery.g8Desc": "Lomba Estafet Spons Final XI.1 Saintek",
+      "gallery.g9Title": "Lomba",
+      "gallery.g9Desc": "Lomba Estafet Spons XI.1 Saintek",
+
+      "footer.built": "Dibuat di sela sela tugas sekolah."
+    },
+    en: {
+      "preloader.loading": "Loading...",
+      "nav.about": "About",
+      "nav.students": "Students",
+      "nav.homeroom": "Homeroom Teacher",
+      "nav.gallery": "Gallery",
+      "nav.contact": "Contact",
+
+      "hero.desc": "Welcome to the official website of class <span class=\"text-highlight\">XI.1 Saintek</span> SMA PGRI 3 Jakarta. A class full of <span class=\"text-highlight\">achievements</span> and <span class=\"text-highlight\">togetherness</span>.",
+      "hero.btnAbout": "About Class",
+      "hero.btnStudents": "View Students",
+      "hero.scroll": "Scroll down",
+
+      "about.sectionTitlePrefix": "About",
+      "about.sectionSubtitle": "Getting to know the pride class of SMA PGRI 3 Jakarta better",
+      "about.tabStory": "Class Profile",
+      "about.tabMission": "Vision & Mission",
+      "about.tabApproach": "Character",
+
+      "about.profileTitle": "Class Profile of XI.1 Saintek",
+      "about.profileP1": "<strong>XI.1 Saintek</strong> is an excellent class at SMA PGRI 3 Jakarta focusing on Science and Technology. This class consists of <strong>18 male students</strong> and <strong>15 female students</strong> with high learning enthusiasm.",
+      "about.profileP2": "We are a young generation ready to face future challenges equipped with knowledge, skills, and strong character. In this class, we learn not only for grades, but to become beneficial individuals for society.",
+      "about.profileP3": "Under the guidance of Mrs. Afrinawati, M.Pd as our homeroom teacher, we always strive to give our best in every academic and non-academic activity.",
+
+      "mission.mainTitle": "Vision & Mission",
+      "mission.visionTitle": "Vision",
+      "mission.visionText": "To become an outstanding class producing smart, characterful, and high-achieving generations in science and technology.",
+      "mission.missionTitle": "Mission",
+      "mission.val1Title": "High Achieving",
+      "mission.val1Desc": "Enhancing academic and non-academic achievements in various fields",
+      "mission.val2Title": "Strong Character",
+      "mission.val2Desc": "Building honest, disciplined, and responsible character",
+      "mission.val3Title": "Solidarity",
+      "mission.val3Desc": "Fostering togetherness and mutual assistance among students",
+
+      "char.mainTitle": "Class Character",
+      "char.c1Title": "Smart & Critical",
+      "char.c1Desc": "We always strive to think critically in solving problems and honing logical thinking skills.",
+      "char.c2Title": "Caring & Sharing",
+      "char.c2Desc": "We care deeply about others and are always ready to help friends in need.",
+      "char.c3Title": "Innovative & Creative",
+      "char.c3Desc": "We constantly innovate and create in various activities to produce the best work.",
+      "char.c4Title": "Competitive & Sporty",
+      "char.c4Desc": "We uphold sportsmanship in every competition and strive to be the best in a healthy way.",
+
+      "homeroom.titlePrefix": "Homeroom",
+      "homeroom.titleHighlight": "Teacher",
+      "homeroom.subtitle": "The motivator and mentor of XI-1 Saintek",
+
+      "students.titlePrefix": "Students of",
+      "students.unit": "students",
+
+      "schedule.titlePrefix": "Class Schedule",
+      "schedule.subtitle": "Learning activity schedule",
+      "day.monday": "Monday",
+      "day.tuesday": "Tuesday",
+      "day.wednesday": "Wednesday",
+      "day.thursday": "Thursday",
+      "day.friday": "Friday",
+
+      "subject.mtktl": "ADV. MATH",
+      "subject.religion": "RELIGION",
+      "subject.biology": "BIOLOGY",
+      "subject.mtkwajib": "MATH",
+      "subject.chemistry": "CHEMISTRY",
+      "subject.history": "HISTORY",
+      "subject.art": "FINE ARTS",
+      "subject.english": "ENGLISH",
+      "subject.counseling": "COUNSELING",
+      "subject.civics": "CIVICS",
+      "subject.physics": "PHYSICS",
+      "subject.indonesian": "INDONESIAN",
+      "subject.pe": "PHYS. ED.",
+
+      "gallery.titlePrefix": "Class",
+      "gallery.titleHighlight": "Gallery",
+      "gallery.g1Title": "Photo with Homeroom Teacher",
+      "gallery.g1Desc": "Group photo of XI.1 Saintek",
+      "gallery.g2Title": "Sports Activity",
+      "gallery.g2Desc": "Group photo during sports activity",
+      "gallery.g3Title": "Jump Rope Activity",
+      "gallery.g4Title": "Fine Arts Activity",
+      "gallery.g4Desc": "Roshambo before presentation",
+      "gallery.g5Title": "Competition",
+      "gallery.g5Desc": "Flying Sarong Contest XI.1 Saintek",
+      "gallery.g6Title": "Competition",
+      "gallery.g6Desc": "Sarong Relay Contest XI.1 Saintek",
+      "gallery.g7Title": "Competition",
+      "gallery.g7Desc": "Magic Speed Number Contest XI.1 Saintek",
+      "gallery.g8Title": "Competition",
+      "gallery.g8Desc": "Sponge Relay Contest Final XI.1 Saintek",
+      "gallery.g9Title": "Competition",
+      "gallery.g9Desc": "Sponge Relay Contest XI.1 Saintek",
+
+      "footer.built": "Built between school assignments."
+    }
+  };
+
+  let currentLang = localStorage.getItem('language') || 'id';
+
+  function applyTranslations(lang) {
+    const dict = translations[lang];
+    if (!dict) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    document.querySelectorAll('.lang-switch button').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    document.documentElement.lang = lang;
+  }
+
+  applyTranslations(currentLang);
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLang = btn.dataset.lang;
+      currentLang = selectedLang;
+      localStorage.setItem('language', selectedLang);
+      applyTranslations(selectedLang);
+      initHomeroomSection();
+      initStudentsSection();
+      initTypingEffect();
+    });
+  });
 }

@@ -1581,6 +1581,42 @@ button {
   font-weight: 600;
 }
 
+/* ===== Language Switcher ===== */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  background-color: rgba(228, 228, 231, 0.4);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+}
+
+.dark-mode .lang-switch {
+  background-color: rgba(63, 63, 70, 0.4);
+  border-color: var(--border-dark);
+}
+
+.lang-switch button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  color: var(--text-lighter);
+  font-weight: 700;
+  font-size: 12px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.lang-switch button.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero-title {
