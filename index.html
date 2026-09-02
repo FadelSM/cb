@@ -14,11 +14,8 @@
   <meta property="og:image" content="src/LogoXI1Saintek.jpg">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   
   <link rel="stylesheet" href="asset/style.css">
@@ -31,7 +28,7 @@
         <span>XI.1 Saintek</span>
         <span>&gt;</span>
       </div>
-      <p>Loading...</p>
+      <p data-i18n="preloader.loading">Loading...</p>
     </div>
   </div>
 
@@ -49,27 +46,31 @@
         <div class="desktop-menu">
           <a href="#about" class="nav-link">
             <i class="fas fa-users"></i>
-            <span>Tentang</span>
+            <span data-i18n="nav.about">Tentang</span>
           </a>
           <a href="#students" class="nav-link">
             <i class="fas fa-user-graduate"></i>
-            <span>Siswa</span>
+            <span data-i18n="nav.students">Siswa</span>
           </a>
           <a href="#homeroom" class="nav-link">
             <i class="fas fa-chalkboard-teacher"></i>
-            <span>Wali Kelas</span>
+            <span data-i18n="nav.homeroom">Wali Kelas</span>
           </a>
           <a href="#gallery" class="nav-link">
             <i class="fas fa-images"></i>
-            <span>Galeri</span>
+            <span data-i18n="nav.gallery">Galeri</span>
           </a>
           <a href="#contact" class="nav-link">
             <i class="fas fa-envelope"></i>
-            <span>Kontak</span>
+            <span data-i18n="nav.contact">Kontak</span>
           </a>
         </div>
         
         <div class="navbar-actions">
+          <div class="lang-switch">
+            <button type="button" data-lang="id" class="active">ID</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
             <i class="fas fa-moon"></i>
           </button>
@@ -85,7 +86,7 @@
         <div class="mobile-menu-header">
           <div class="mobile-logo">
             <span class="bracket">&lt;</span>
-            <span class="name">X.1 Saintek</span>
+            <span class="name">XI.1 Saintek</span>
             <span class="bracket">&gt;</span>
           </div>
           <button id="mobile-close" class="mobile-close">
@@ -94,11 +95,11 @@
         </div>
         
         <div class="mobile-menu-links">
-          <a href="#about" class="mobile-nav-link"><i class="fas fa-users"></i> Tentang</a>
-          <a href="#students" class="mobile-nav-link"><i class="fas fa-user-graduate"></i> Siswa</a>
-          <a href="#homeroom" class="mobile-nav-link"><i class="fas fa-chalkboard-teacher"></i> Wali Kelas</a>
-          <a href="#gallery" class="mobile-nav-link"><i class="fas fa-images"></i> Galeri</a>
-          <a href="#contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> Kontak</a>
+          <a href="#about" class="mobile-nav-link"><i class="fas fa-users"></i> <span data-i18n="nav.about">Tentang</span></a>
+          <a href="#students" class="mobile-nav-link"><i class="fas fa-user-graduate"></i> <span data-i18n="nav.students">Siswa</span></a>
+          <a href="#homeroom" class="mobile-nav-link"><i class="fas fa-chalkboard-teacher"></i> <span data-i18n="nav.homeroom">Wali Kelas</span></a>
+          <a href="#gallery" class="mobile-nav-link"><i class="fas fa-images"></i> <span data-i18n="nav.gallery">Galeri</span></a>
+          <a href="#contact" class="mobile-nav-link"><i class="fas fa-envelope"></i> <span data-i18n="nav.contact">Kontak</span></a>
         </div>
       </div>
     </div>
@@ -115,7 +116,7 @@
       <div class="hero-content">
         <div class="profile-image">
           <div class="image-container">
-            <img src="src/LogoXI1Saintek.jpg" alt="Logo XI-1 Saintek">
+            <img src="src/LogoXI1Saintek.jpg" alt="Logo XI.1 Saintek">
           </div>
           <div class="profile-ring"></div>
         </div>
@@ -129,24 +130,22 @@
           <p id="typing-text" class="typing-effect"></p>
         </div>
         
-        <p class="hero-description">
-          Selamat datang di website resmi kelas <span class="text-highlight">XI.1 Saintek</span> 
-          SMA PGRI 3 Jakarta. Kelas yang penuh <span class="text-highlight">prestasi</span> dan 
-          <span class="text-highlight">kebersamaan</span>.
+        <p class="hero-description" data-i18n="hero.desc">
+          Selamat datang di website resmi kelas XI.1 Saintek SMA PGRI 3 Jakarta. Kelas yang penuh prestasi dan kebersamaan.
         </p>
         
         <div class="hero-buttons">
           <a href="#about" class="btn primary-btn">
-            <i class="fas fa-info-circle"></i> Tentang Kelas
+            <i class="fas fa-info-circle"></i> <span data-i18n="hero.btnAbout">Tentang Kelas</span>
           </a>
           <a href="#students" class="btn secondary-btn">
-            <i class="fas fa-user-graduate"></i> Lihat Siswa
+            <i class="fas fa-user-graduate"></i> <span data-i18n="hero.btnStudents">Lihat Siswa</span>
           </a>
         </div>
         
         <div class="scroll-indicator">
           <a href="#about" aria-label="Scroll down">
-            <span class="scroll-text">Scroll ke bawah</span>
+            <span class="scroll-text" data-i18n="hero.scroll">Scroll ke bawah</span>
             <div class="scroll-icon">
               <div class="scroll-dot"></div>
             </div>
@@ -166,9 +165,9 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">
-          Tentang <span class="title-highlight">XI.1 Saintek</span>
+          <span data-i18n="about.sectionTitlePrefix">Tentang</span> <span class="title-highlight">XI.1 Saintek</span>
         </h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="about.sectionSubtitle">
           Mengenal lebih dekat kelas kebanggaan SMA PGRI 3 Jakarta
         </p>
       </div>
@@ -176,13 +175,13 @@
       <div class="about-tabs">
         <div class="tab-navigation">
           <button class="tab-btn active" data-tab="story">
-            <i class="fas fa-book"></i> Profil Kelas
+            <i class="fas fa-book"></i> <span data-i18n="about.tabStory">Profil Kelas</span>
           </button>
           <button class="tab-btn" data-tab="mission">
-            <i class="fas fa-flag"></i> Visi & Misi
+            <i class="fas fa-flag"></i> <span data-i18n="about.tabMission">Visi & Misi</span>
           </button>
           <button class="tab-btn" data-tab="approach">
-            <i class="fas fa-handshake"></i> Karakter
+            <i class="fas fa-handshake"></i> <span data-i18n="about.tabApproach">Karakter</span>
           </button>
         </div>
         
@@ -198,24 +197,19 @@
               <div class="story-content-column">
                 <h3 class="content-title">
                   <span class="quote-icon"><i class="fas fa-quote-left"></i></span> 
-                  Profil Kelas XI.1 Saintek
+                  <span data-i18n="about.profileTitle">Profil Kelas XI.1 Saintek</span>
                 </h3>
                 
-                <p class="content-paragraph">
-                  <strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada 
-                  bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>18 siswa laki-laki</strong> dan 
-                  <strong>15 siswa perempuan</strong> yang memiliki semangat belajar tinggi.
+                <p class="content-paragraph" data-i18n="about.profileP1">
+                  <strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>18 siswa laki-laki</strong> dan <strong>15 siswa perempuan</strong> yang memiliki semangat belajar tinggi.
                 </p>
                 
-                <p class="content-paragraph">
-                  Kami adalah generasi muda yang siap menghadapi tantangan masa depan dengan bekal ilmu 
-                  pengetahuan, keterampilan, dan karakter yang kuat. Di kelas ini, kami belajar bukan hanya 
-                  untuk nilai, tetapi untuk menjadi pribadi yang bermanfaat bagi masyarakat.
+                <p class="content-paragraph" data-i18n="about.profileP2">
+                  Kami adalah generasi muda yang siap menghadapi tantangan masa depan dengan bekal ilmu pengetahuan, keterampilan, dan karakter yang kuat. Di kelas ini, kami belajar bukan hanya untuk nilai, tetapi untuk menjadi pribadi yang bermanfaat bagi masyarakat.
                 </p>
                 
-                <p class="content-paragraph">
-                  Dengan bimbingan dari Ibu Afrinawati, M.Pd sebagai wali kelas, kami selalu berusaha 
-                  memberikan yang terbaik dalam setiap kegiatan akademik maupun non-akademik.
+                <p class="content-paragraph" data-i18n="about.profileP3">
+                  Dengan bimbingan dari Ibu Afrinawati, M.Pd sebagai wali kelas, kami selalu berusaha memberikan yang terbaik dalam setiap kegiatan akademik maupun non-akademik.
                 </p>
               </div>
             </div>
@@ -227,39 +221,38 @@
                 <div class="mission-icon">
                   <i class="fas fa-flag"></i>
                 </div>
-                <h3 class="mission-title">Visi & Misi</h3>
+                <h3 class="mission-title" data-i18n="mission.mainTitle">Visi & Misi</h3>
               </div>
               
-              <h4 class="mission-subtitle">Visi</h4>
-              <p class="mission-statement">
-                Menjadi kelas unggulan yang mencetak generasi cerdas, berkarakter, dan berprestasi 
-                di bidang sains dan teknologi.
+              <h4 class="mission-subtitle" data-i18n="mission.visionTitle">Visi</h4>
+              <p class="mission-statement" data-i18n="mission.visionText">
+                Menjadi kelas unggulan yang mencetak generasi cerdas, berkarakter, dan berprestasi di bidang sains dan teknologi.
               </p>
               
-              <h4 class="mission-subtitle" style="margin-top: 2rem;">Misi</h4>
+              <h4 class="mission-subtitle" style="margin-top: 2rem;" data-i18n="mission.missionTitle">Misi</h4>
               <div class="mission-values">
                 <div class="value-card">
                   <div class="value-icon create-icon">
                     <i class="fas fa-graduation-cap"></i>
                   </div>
-                  <h4 class="value-title">Berprestasi</h4>
-                  <p class="value-description">Meningkatkan prestasi akademik dan non-akademik di berbagai bidang</p>
+                  <h4 class="value-title" data-i18n="mission.val1Title">Berprestasi</h4>
+                  <p class="value-description" data-i18n="mission.val1Desc">Meningkatkan prestasi akademik dan non-akademik di berbagai bidang</p>
                 </div>
                 
                 <div class="value-card">
                   <div class="value-icon learn-icon">
                     <i class="fas fa-hand-holding-heart"></i>
                   </div>
-                  <h4 class="value-title">Berkarakter</h4>
-                  <p class="value-description">Membangun karakter yang jujur, disiplin, dan bertanggung jawab</p>
+                  <h4 class="value-title" data-i18n="mission.val2Title">Berkarakter</h4>
+                  <p class="value-description" data-i18n="mission.val2Desc">Membangun karakter yang jujur, disiplin, dan bertanggung jawab</p>
                 </div>
                 
                 <div class="value-card">
                   <div class="value-icon share-icon">
                     <i class="fas fa-users"></i>
                   </div>
-                  <h4 class="value-title">Bersolidaritas</h4>
-                  <p class="value-description">Menjalin kebersamaan dan gotong royong antar sesama siswa</p>
+                  <h4 class="value-title" data-i18n="mission.val3Title">Bersolidaritas</h4>
+                  <p class="value-description" data-i18n="mission.val3Desc">Menjalin kebersamaan dan gotong royong antar sesama siswa</p>
                 </div>
               </div>
             </div>
@@ -271,7 +264,7 @@
                 <div class="approach-icon">
                   <i class="fas fa-star"></i>
                 </div>
-                <h3 class="approach-title">Karakter Kelas</h3>
+                <h3 class="approach-title" data-i18n="char.mainTitle">Karakter Kelas</h3>
               </div>
               
               <div class="approach-cards">
@@ -279,10 +272,9 @@
                   <div class="card-icon">
                     <i class="fas fa-brain"></i>
                   </div>
-                  <h4 class="card-title">Cerdas & Kritis</h4>
-                  <p class="card-description">
-                    Kami selalu berusaha untuk berpikir kritis dalam memecahkan masalah dan 
-                    terus mengasah kemampuan berpikir logis.
+                  <h4 class="card-title" data-i18n="char.c1Title">Cerdas & Kritis</h4>
+                  <p class="card-description" data-i18n="char.c1Desc">
+                    Kami selalu berusaha untuk berpikir kritis dalam memecahkan masalah dan terus mengasah kemampuan berpikir logis.
                   </p>
                 </div>
                 
@@ -290,10 +282,9 @@
                   <div class="card-icon">
                     <i class="fas fa-heart"></i>
                   </div>
-                  <h4 class="card-title">Peduli & Berbagi</h4>
-                  <p class="card-description">
-                    Kami memiliki kepedulian tinggi terhadap sesama dan selalu siap membantu 
-                    teman yang membutuhkan.
+                  <h4 class="card-title" data-i18n="char.c2Title">Peduli & Berbagi</h4>
+                  <p class="card-description" data-i18n="char.c2Desc">
+                    Kami memiliki kepedulian tinggi terhadap sesama dan selalu siap membantu teman yang membutuhkan.
                   </p>
                 </div>
 
@@ -301,10 +292,9 @@
                   <div class="card-icon">
                     <i class="fas fa-rocket"></i>
                   </div>
-                  <h4 class="card-title">Inovatif & Kreatif</h4>
-                  <p class="card-description">
-                    Kami selalu berinovasi dan berkreasi dalam berbagai kegiatan untuk 
-                    menghasilkan karya terbaik.
+                  <h4 class="card-title" data-i18n="char.c3Title">Inovatif & Kreatif</h4>
+                  <p class="card-description" data-i18n="char.c3Desc">
+                    Kami selalu berinovasi dan berkreasi dalam berbagai kegiatan untuk menghasilkan karya terbaik.
                   </p>
                 </div>
 
@@ -312,10 +302,9 @@
                   <div class="card-icon">
                     <i class="fas fa-handshake"></i>
                   </div>
-                  <h4 class="card-title">Kompetitif & Sportif</h4>
-                  <p class="card-description">
-                    Kami menjunjung tinggi sportivitas dalam setiap kompetisi dan 
-                    berusaha menjadi yang terbaik dengan cara yang sehat.
+                  <h4 class="card-title" data-i18n="char.c4Title">Kompetitif & Sportif</h4>
+                  <p class="card-description" data-i18n="char.c4Desc">
+                    Kami menjunjung tinggi sportivitas dalam setiap kompetisi dan berusaha menjadi yang terbaik dengan cara yang sehat.
                   </p>
                 </div>
               </div>
@@ -335,15 +324,15 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">
-          Wali <span class="title-highlight">Kelas</span>
+          <span data-i18n="homeroom.titlePrefix">Wali</span> <span class="title-highlight" data-i18n="homeroom.titleHighlight">Kelas</span>
         </h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="homeroom.subtitle">
           Penggerak dan pembimbing XI-1 Saintek
         </p>
       </div>
       
       <div class="homeroom-grid">
-        <!-- Homeroom will be dynamically inserted here by JavaScript -->
+        <!-- Dynamic via JS -->
       </div>
     </div>
   </section>
@@ -357,82 +346,81 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">
-          Siswa <span class="title-highlight">XI-1 Saintek</span>
+          <span data-i18n="students.titlePrefix">Siswa</span> <span class="title-highlight">XI-1 Saintek</span>
         </h2>
         <p class="section-subtitle">
-          <span id="total-students">30</span> siswa
+          <span id="total-students">30</span> <span data-i18n="students.unit">siswa</span>
         </p>
       </div>
       
       <div class="students-grid">
-        <!-- Students will be dynamically inserted here by JavaScript -->
+        <!-- Dynamic via JS -->
       </div>
     </div>
   </section>
 
   <section id="schedule" class="section container fade-in">
-  <div class="section-header">
-    <h2 class="section-title">Jadwal Pelajaran <span class="title-highlight">XI.1 Saintek</span></h2>
-    <p class="section-subtitle">Jadwal kegiatan belajar</p>
-  </div>
-  
-  <div class="schedule-grid">
-    <div class="schedule-card">
-      <div class="schedule-day">Senin</div>
-      <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
-      <div class="schedule-subjects">
-        <span class="subject-badge">MTK TL</span>
-        <span class="subject-badge">AGAMA</span>
-        <span class="subject-badge">BIOLOGI</span>
-      </div>
+    <div class="section-header">
+      <h2 class="section-title"><span data-i18n="schedule.titlePrefix">Jadwal Pelajaran</span> <span class="title-highlight">XI.1 Saintek</span></h2>
+      <p class="section-subtitle" data-i18n="schedule.subtitle">Jadwal kegiatan belajar</p>
     </div>
     
-    <div class="schedule-card">
-      <div class="schedule-day">Selasa</div>
-      <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
-      <div class="schedule-subjects">
-        <span class="subject-badge">MTK WAJIB</span>
-        <span class="subject-badge">KIMIA</span>
-        <span class="subject-badge">MTK TL</span>
-        <span class="subject-badge">SEJARAH</span>
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <div class="schedule-day" data-i18n="day.monday">Senin</div>
+        <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
+        <div class="schedule-subjects">
+          <span class="subject-badge" data-i18n="subject.mtktl">MTK TL</span>
+          <span class="subject-badge" data-i18n="subject.religion">AGAMA</span>
+          <span class="subject-badge" data-i18n="subject.biology">BIOLOGI</span>
+        </div>
       </div>
-    </div>
-    
-    <div class="schedule-card">
-      <div class="schedule-day">Rabu</div>
-      <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
-      <div class="schedule-subjects">
-        <span class="subject-badge">SENI RUPA</span>
-        <span class="subject-badge">KIMIA</span>
-        <span class="subject-badge">B.INGGRIS</span>
-        <span class="subject-badge">BK</span>
-        <span class="subject-badge">PKN</span>
+      
+      <div class="schedule-card">
+        <div class="schedule-day" data-i18n="day.tuesday">Selasa</div>
+        <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
+        <div class="schedule-subjects">
+          <span class="subject-badge" data-i18n="subject.mtkwajib">MTK WAJIB</span>
+          <span class="subject-badge" data-i18n="subject.chemistry">KIMIA</span>
+          <span class="subject-badge" data-i18n="subject.mtktl">MTK TL</span>
+          <span class="subject-badge" data-i18n="subject.history">SEJARAH</span>
+        </div>
       </div>
-    </div>
+      
+      <div class="schedule-card">
+        <div class="schedule-day" data-i18n="day.wednesday">Rabu</div>
+        <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
+        <div class="schedule-subjects">
+          <span class="subject-badge" data-i18n="subject.art">SENI RUPA</span>
+          <span class="subject-badge" data-i18n="subject.chemistry">KIMIA</span>
+          <span class="subject-badge" data-i18n="subject.english">B.INGGRIS</span>
+          <span class="subject-badge" data-i18n="subject.counseling">BK</span>
+          <span class="subject-badge" data-i18n="subject.civics">PKN</span>
+        </div>
+      </div>
 
-    <div class="schedule-card">
-      <div class="schedule-day">Kamis</div>
-      <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
-      <div class="schedule-subjects">
-        <span class="subject-badge">FISIKA</span>
-        <span class="subject-badge">MTK WAJIB</span>
-        <span class="subject-badge">B.INDONESIA</span>
-        <span class="subject-badge">BIOLOGI</span>
+      <div class="schedule-card">
+        <div class="schedule-day" data-i18n="day.thursday">Kamis</div>
+        <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 15:00</div>
+        <div class="schedule-subjects">
+          <span class="subject-badge" data-i18n="subject.physics">FISIKA</span>
+          <span class="subject-badge" data-i18n="subject.mtkwajib">MTK WAJIB</span>
+          <span class="subject-badge" data-i18n="subject.indonesian">B.INDONESIA</span>
+          <span class="subject-badge" data-i18n="subject.biology">BIOLOGI</span>
+        </div>
+      </div>
+
+      <div class="schedule-card">
+        <div class="schedule-day" data-i18n="day.friday">Jumat</div>
+        <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 11:10</div>
+        <div class="schedule-subjects">
+          <span class="subject-badge" data-i18n="subject.pe">PENJAS</span>
+          <span class="subject-badge" data-i18n="subject.physics">FISIKA</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="schedule-card">
-      <div class="schedule-day">Jumat</div>
-      <div class="schedule-time"><i class="far fa-clock"></i> 07:00 - 11:10</div>
-      <div class="schedule-subjects">
-        <span class="subject-badge">PENJAS</span>
-        <span class="subject-badge">FISIKA</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Gallery Section -->
   <section id="gallery" class="gallery-section section fade-in">
     <div class="section-bg">
       <div class="bg-blob bg-blob-10"></div>
@@ -442,7 +430,7 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">
-          Galeri <span class="title-highlight">Kelas</span>
+          <span data-i18n="gallery.titlePrefix">Galeri</span> <span class="title-highlight" data-i18n="gallery.titleHighlight">Kelas</span>
         </h2>
         <p class="section-subtitle">
           XI.1 Saintek
@@ -452,114 +440,103 @@
      <div class="gallery-grid">
        <div class="gallery-item">
          <a href="src/foto11.jpg" target="_blank" class="gallery-img-link">
-     <img src="src/foto11.jpg" alt="Olahraga" class="gallery-img">
+           <img src="src/foto11.jpg" alt="Olahraga" class="gallery-img">
          </a>
-         <h3>Foto Bareng Walas</h3>
-         <p>Fotbar XI.1 Saintek</p>
+         <h3 data-i18n="gallery.g1Title">Foto Bareng Walas</h3>
+         <p data-i18n="gallery.g1Desc">Fotbar XI.1 Saintek</p>
       </div>
-        <div class="gallery-item">
-          <a href="src/foto8.jpg" target="_blank" class="gallery-img-link">
-      <img src="src/foto8.jpg" alt="Olahraga" class="gallery-img">
-          </a>
-          <h3>Kegiatan Olahraga</h3>
-          <p>Suasana Fotbar Olahraga XI.1 Saintek</p>
-        </div>
-        
-        <div class="gallery-item">
-          <a href="src/vd3.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto8.jpg">
-        <source src="src/vd3.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Kegiatan Olahraga Lompat Tali</h3>
-          <p>XI.1 Saintek</p>
-        </div>
-        <div class="gallery-item">
-          <a href="src/vd5.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto8.jpg">
-        <source src="src/vd5.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Kegiatan Senirupa</h3>
-          <p>Suit Maju duluan presentasi</p>
-        </div>
-        <div class="gallery-item">
-          <a href="src/vd4.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto13.jpg">
-        <source src="src/vd4.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Lomba</h3>
-          <p>Lomba Sarung Terbang XI.1 Saintek</p>
-        </div>
-        <div class="gallery-item">
-          <a href="src/vd6.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto12.jpg">
-        <source src="src/vd6.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Lomba</h3>
-          <p>Lomba Estafet Sarung XI.1 Saintek</p>
+      <div class="gallery-item">
+        <a href="src/foto8.jpg" target="_blank" class="gallery-img-link">
+          <img src="src/foto8.jpg" alt="Olahraga" class="gallery-img">
+        </a>
+        <h3 data-i18n="gallery.g2Title">Kegiatan Olahraga</h3>
+        <p data-i18n="gallery.g2Desc">Suasana Fotbar Olahraga XI.1 Saintek</p>
       </div>
-       <div class="gallery-item">
-          <a href="src/vd7.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
-        <source src="src/vd7.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Lomba</h3>
-          <p>Lomba Magic Speed Number XI.1 Saintek</p>
-       </div>
-       <div class="gallery-item">
-          <a href="src/vd8.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
-        <source src="src/vd8.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Lomba</h3>
-          <p>Lomba Estafet Spons Final XI.1 Saintek</p>
-       </div>
-       <div class="gallery-item">
-          <a href="src/vd1.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
-        <source src="src/vd1.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>Lomba</h3>
-          <p>Lomba Estafet Spons XI.1 Saintek</p>
-       </div>
-       <div class="gallery-item">
-          <a href="src/tiktokan/tiktokan1.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
-        <source src="src/tiktokan/tiktokan1.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>💃🏻🕺🏻</h3>
-          <p>XI.1 Saintek</p>
-       </div>
-       <div class="gallery-item">
-          <a href="src/tiktokan/tiktokan2.mp4" target="_blank" class="gallery-media-link">
-      <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
-        <source src="src/tiktokan/tiktokan2.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
-          </a>
-          <h3>💃🏻🕺🏻</h3>
-          <p>XI.1 Saintek</p>
-       </div>
+      <div class="gallery-item">
+        <a href="src/vd3.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto8.jpg">
+            <source src="src/vd3.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g3Title">Kegiatan Olahraga Lompat Tali</h3>
+        <p>XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/vd5.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto8.jpg">
+            <source src="src/vd5.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g4Title">Kegiatan Senirupa</h3>
+        <p data-i18n="gallery.g4Desc">Suit Maju duluan presentasi</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/vd4.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto13.jpg">
+            <source src="src/vd4.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g5Title">Lomba</h3>
+        <p data-i18n="gallery.g5Desc">Lomba Sarung Terbang XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/vd6.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto12.jpg">
+            <source src="src/vd6.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g6Title">Lomba</h3>
+        <p data-i18n="gallery.g6Desc">Lomba Estafet Sarung XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/vd7.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
+            <source src="src/vd7.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g7Title">Lomba</h3>
+        <p data-i18n="gallery.g7Desc">Lomba Magic Speed Number XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/vd8.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
+            <source src="src/vd8.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g8Title">Lomba</h3>
+        <p data-i18n="gallery.g8Desc">Lomba Estafet Spons Final XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/vd1.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
+            <source src="src/vd1.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3 data-i18n="gallery.g9Title">Lomba</h3>
+        <p data-i18n="gallery.g9Desc">Lomba Estafet Spons XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/tiktokan/tiktokan1.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
+            <source src="src/tiktokan/tiktokan1.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3>💃🏻🕺🏻</h3>
+        <p>XI.1 Saintek</p>
+      </div>
+      <div class="gallery-item">
+        <a href="src/tiktokan/tiktokan2.mp4" target="_blank" class="gallery-media-link">
+          <video class="gallery-video" autoplay loop muted playsinline poster="src/foto11.jpg">
+            <source src="src/tiktokan/tiktokan2.mp4" type="video/mp4">
+          </video>
+        </a>
+        <h3>💃🏻🕺🏻</h3>
+        <p>XI.1 Saintek</p>
+      </div>
      </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -570,24 +547,25 @@
         </div>
         
         <div class="footer-navigation">
-          <a href="#about" class="footer-link">Tentang</a>
-          <a href="#students" class="footer-link">Siswa</a>
-          <a href="#homeroom" class="footer-link">Wali Kelas</a>
-          <a href="#gallery" class="footer-link">Galeri</a>
-          <a href="#contact" class="footer-link">Kontak</a>
+          <a href="#about" class="footer-link" data-i18n="nav.about">Tentang</a>
+          <a href="#students" class="footer-link" data-i18n="nav.students">Siswa</a>
+          <a href="#homeroom" class="footer-link" data-i18n="nav.homeroom">Wali Kelas</a>
+          <a href="#gallery" class="footer-link" data-i18n="nav.gallery">Galeri</a>
+          <a href="#contact" class="footer-link" data-i18n="nav.contact">Kontak</a>
         </div>
 
         <div id="contact" class="contact-section">
-        <div class="footer-social">
-          <a href="https://www.instagram.com/elfe1ns" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="https://whatsapp.com/channel/0029Vb6Bil59RZAdGmGOPp0N" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://tiktok.com/@caintekgemes" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/elfe1ns" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com/channel/0029Vb6Bil59RZAdGmGOPp0N" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://tiktok.com/@caintekgemes" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          </div>
         </div>
-    </div>
+      </div>
       
       <div class="footer-bottom">
         <p class="copyright">
-          &copy; <span id="current-year"></span> XI.1 Saintek. Built between school assignments.
+          &copy; <span id="current-year"></span> XI.1 Saintek. <span data-i18n="footer.built">Dibuat di sela sela tugas sekolah.</span>
         </p>
         <button id="back-to-top" class="back-to-top" aria-label="Back to top">
           <i class="fas fa-arrow-up"></i>
@@ -597,8 +575,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-  <!-- Custom JavaScript -->
   <script src="asset/script.js"></script>
 </body>
 </html>
