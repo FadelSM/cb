@@ -364,7 +364,7 @@ function initStarsBackground() {
 function initLanguageSwitcher() {
   const translations = {
     id: {
-      "preloader.loading": "Tunggu...",
+      "preloader.loading": "Loading...",
       "nav.about": "Tentang",
       "nav.students": "Siswa",
       "nav.lesson": "Pelajaran",
