@@ -175,7 +175,7 @@ function initTypingEffect() {
     '3rd Floor Class',
     'Web Developer FadelSM'
   ] : [
-    'Welcome To Website XI.1 Saintek',
+    'Selamat Datang di Website XI.1 Saintek',
     'Kelas Lantai 3',
     'Pengembang Web FadelSM'
   ];
@@ -364,7 +364,7 @@ function initStarsBackground() {
 function initLanguageSwitcher() {
   const translations = {
     id: {
-      "preloader.loading": "Loading...",
+      "preloader.loading": "Sabar...",
       "nav.about": "Tentang",
       "nav.students": "Siswa",
       "nav.lesson": "Pelajaran",
