@@ -175,7 +175,7 @@ function initTypingEffect() {
     '3rd Floor Class',
     'Web Developer FadelSM'
   ] : [
-    'Selamat datang di Website XI.1 Saintek',
+    'Welcome To Website XI.1 Saintek',
     'Kelas Lantai 3',
     'Pengembang Web FadelSM'
   ];
@@ -367,6 +367,7 @@ function initLanguageSwitcher() {
       "preloader.loading": "Loading...",
       "nav.about": "Tentang",
       "nav.students": "Siswa",
+      "nav.lesson": "Pelajaran",
       "nav.homeroom": "Wali Kelas",
       "nav.gallery": "Galeri",
       "nav.contact": "Kontak",
@@ -463,6 +464,7 @@ function initLanguageSwitcher() {
       "preloader.loading": "Loading...",
       "nav.about": "About",
       "nav.students": "Students",
+      "nav.lesson": "Lesson",
       "nav.homeroom": "Homeroom Teacher",
       "nav.gallery": "Gallery",
       "nav.contact": "Contact",
