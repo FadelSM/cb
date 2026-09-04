@@ -1267,7 +1267,7 @@ button {
   font-size: 0.95rem;
 }
 
-/* ===== Video / Live Photo Styling ===== */
+/* ===== Video Container & Badge Click Fix ===== */
 .gallery-media-link {
   display: block;
   width: 100%;
@@ -1275,7 +1275,8 @@ button {
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 1rem;
-  position: relative;
+  position: relative !important;
+  z-index: 1;
 }
 
 .gallery-video {
@@ -1287,10 +1288,32 @@ button {
   cursor: pointer;
 }
 
-/* Efek zoom saat video di-hover */
-.gallery-media-link:hover .gallery-video {
-  transform: scale(1.05);
+.click-badge {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: rgba(126, 34, 206, 0.9);
+  color: #ffffff !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 99 !important; /* Memaksa badge muncul di atas video */
 }
+
+.gallery-media-link:hover .click-badge {
+  background: var(--primary);
+  transform: translate(-50%, -50%) scale(1.1) !important;
+}
+
 
 /* ===== Contact Section ===== */
 .contact-section {
