@@ -6,6 +6,7 @@
 let typingTimeout = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTopStatusBar();
   initPreloader();
   
   setTimeout(() => {
@@ -28,6 +29,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 1500);
 });
+
+// Device Top Status Bar (Jam, Sinyal, WiFi, Baterai)
+function initTopStatusBar() {
+  // 1. Update Jam Realtime (Format HH.MM)
+  function updateBarTime() {
+    const timeEl = document.getElementById('bar-time');
+    if (timeEl) {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      timeEl.textContent = `${hours}.${minutes}`;
+    }
+  }
+  setInterval(updateBarTime, 1000);
+  updateBarTime();
+
+  // 2. Status Baterai Akurat
+  const batteryLevelEl = document.getElementById('bar-battery-level');
+  const batteryIcon = document.getElementById('bar-battery-icon');
+
+  if ('getBattery' in navigator) {
+    navigator.getBattery().then(battery => {
+      function updateBattery() {
+        const level = Math.round(battery.level * 100);
+        if (batteryLevelEl) batteryLevelEl.textContent = level;
+
+        if (batteryIcon) {
+          if (battery.charging) {
+            batteryIcon.className = 'fas fa-battery-charging bar-battery-body';
+            batteryIcon.style.color = '#10b981'; // Hijau saat mengisi daya
+          } else if (level <= 20) {
+            batteryIcon.className = 'fas fa-battery-quarter bar-battery-body';
+            batteryIcon.style.color = '#ef4444'; // Merah jika baterai rendah
+          } else {
+            batteryIcon.className = 'fas fa-battery-full bar-battery-body';
+            batteryIcon.style.color = '#ffffff';
+          }
+        }
+      }
+      updateBattery();
+      battery.addEventListener('levelchange', updateBattery);
+      battery.addEventListener('chargingchange', updateBattery);
+    });
+  }
+
+  // 3. Status Jaringan Akurat
+  const wifiIcon = document.getElementById('bar-wifi-icon');
+  const signalIcon = document.getElementById('bar-signal-icon');
+
+  function updateNetwork() {
+    if (!navigator.onLine) {
+      if (wifiIcon) wifiIcon.style.display = 'none';
+      if (signalIcon) signalIcon.style.opacity = '0.3';
+    } else {
+      if (wifiIcon) wifiIcon.style.display = 'inline-block';
+      if (signalIcon) signalIcon.style.opacity = '1';
+    }
+  }
+  updateNetwork();
+  window.addEventListener('online', updateNetwork);
+  window.addEventListener('offline', updateNetwork);
+}
 
 // Preloader
 function initPreloader() {
@@ -144,7 +207,7 @@ function initNavigation() {
       if (targetElement) {
         const navbarHeight = navbar.offsetHeight;
         window.scrollTo({
-          top: targetElement.offsetTop - navbarHeight - 20,
+          top: targetElement.offsetTop - navbarHeight - 56,
           behavior: 'smooth'
         });
       }
