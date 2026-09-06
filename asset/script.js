@@ -458,7 +458,7 @@ function initLanguageSwitcher() {
       "gallery.g9Title": "Lomba",
       "gallery.g9Desc": "Lomba Estafet Spons XI.1 Saintek",
 
-      "footer.built": "Dibuat di sela sela tugas sekolah."
+      "footer.built": "Hak cipta dilindungi undang-undang."
     },
     en: {
       "preloader.loading": "Loading...",
@@ -555,7 +555,7 @@ function initLanguageSwitcher() {
       "gallery.g9Title": "Competition",
       "gallery.g9Desc": "Sponge Relay Contest XI.1 Saintek",
 
-      "footer.built": "Built between school assignments."
+      "footer.built": "All rights reserved."
     }
   };
 
