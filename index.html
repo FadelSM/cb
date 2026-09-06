@@ -21,6 +21,22 @@
   <link rel="stylesheet" href="asset/style.css">
 </head>
 <body>
+  <!-- Device Status Bar Atas (Jam, Sinyal, Wifi, Baterai) -->
+  <div id="device-status-bar" class="device-status-bar">
+    <div class="status-left">
+      <span id="bar-time" class="bar-time">00.00</span>
+    </div>
+
+    <div class="status-right">
+      <i id="bar-signal-icon" class="fas fa-signal bar-icon"></i>
+      <i id="bar-wifi-icon" class="fas fa-wifi bar-icon"></i>
+      <div class="battery-wrapper">
+        <span id="bar-battery-level">--</span>
+        <i id="bar-battery-icon" class="fas fa-battery-full bar-battery-body"></i>
+      </div>
+    </div>
+  </div>
+
   <div id="preloader">
     <div class="loader">
       <div class="loader-inner">
