@@ -1,13 +1,11 @@
 /**
- * XI-1 Saintek - Main JavaScript
+ * XI.1 Saintek - Main JavaScript
  * Website Kelas SMA PGRI 3 Jakarta
  */
 
 let typingTimeout = null;
 
-// ==========================================
 // 1. DATA SISWA GLOBAL (Bisa diakses dari mana saja)
-// ==========================================
 const studentData = [
   { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar.jpg' },
   { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar.jpg' },
@@ -41,9 +39,7 @@ const studentData = [
   { name: 'Zalfa Zahirah', gender: 'Perempuan', image: 'src/zalfa.jpg' }
 ];
 
-// ==========================================
 // 2. SISTEM HITUNG OTOMATIS
-// ==========================================
 const countMale = studentData.filter(s => s.gender === 'Laki-Laki').length;
 const countFemale = studentData.filter(s => s.gender === 'Perempuan').length;
 const countTotal = studentData.length;
