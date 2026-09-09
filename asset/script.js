@@ -5,6 +5,49 @@
 
 let typingTimeout = null;
 
+// ==========================================
+// 1. DATA SISWA GLOBAL (Bisa diakses dari mana saja)
+// ==========================================
+const studentData = [
+  { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar.jpg' },
+  { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar.jpg' },
+  { name: 'Bagus Raditya Faturrahman', gender: 'Laki-Laki', image: 'src/bagus.jpg' },
+  { name: 'Damar Cahyo Panuluh', gender: 'Laki-Laki', image: 'src/damar.jpg' },
+  { name: 'Dewi Thoatika Nurjanah', gender: 'Perempuan', image: 'src/dewi.jpg' },
+  { name: 'Eka Puspita Novita Damayanti', gender: 'Perempuan', image: 'src/puspit.jpg' },
+  { name: 'Evan Al Rasyid', gender: 'Laki-Laki', image: 'src/evan.jpg' },
+  { name: 'Fadel Shafwan Maliki', gender: 'Laki-Laki', image: 'src/fadel.jpg' },
+  { name: 'Faqih Arya Pasha', gender: 'Laki-Laki', image: 'src/faqih.jpg' },
+  { name: 'Fazril Ilyas', gender: 'Laki-Laki', image: 'src/fazril.jpg' },
+  { name: 'Firdaus Ilham', gender: 'Laki-Laki', image: 'src/ilham.jpg' },
+  { name: 'Fitri Lailan Najmi', gender: 'Perempuan', image: 'src/fitri.jpg' },
+  { name: 'Intan Aliyana', gender: 'Perempuan', image: 'src/intan.jpg' },
+  { name: 'Jenius Hosevan Simon Panjaitan', gender: 'Laki-Laki', image: 'src/jenius.jpg' },
+  { name: 'Kayla Khalidah Tajudin', gender: 'Perempuan', image: 'src/kayla.jpg' },
+  { name: 'Keyla Nur Hasanah', gender: 'Perempuan', image: 'src/keyla.jpg' },
+  { name: 'Khoirul Anisa Putri', gender: 'Perempuan', image: 'src/kep.jpg' },
+  { name: 'Lequinsha Zalyandra Bilqis', gender: 'Perempuan', image: 'src/lequin.jpg' },
+  { name: 'Lintang Azzalea Pratama', gender: 'Perempuan', image: 'src/lintang.jpg' },
+  { name: 'Lutfiah Thalita Azmi', gender: 'Perempuan', image: 'src/tata.jpg' },
+  { name: 'Miftah Khoiron Ramadhan', gender: 'Laki-Laki', image: 'src/miftah.jpg' },
+  { name: 'Moura Dealova Kanza Adiba T.', gender: 'Perempuan', image: 'src/moura.jpg' },
+  { name: 'Muhammad Rizky Maulana', gender: 'Laki-Laki', image: 'src/jajat.jpg' },
+  { name: 'Nabilla Oktavia Andini', gender: 'Perempuan', image: 'src/okta.jpg' },
+  { name: 'Nova Zaidah', gender: 'Perempuan', image: 'src/nova.jpg' },
+  { name: 'Rayiandra Abinaya', gender: 'Laki-Laki', image: 'src/abi.jpg' },
+  { name: 'Rizqi Khoiril Ibad', gender: 'Laki-Laki', image: 'src/aril.jpg' },
+  { name: 'Steven Febrian Pratama', gender: 'Laki-Laki', image: 'src/steven.jpg' },
+  { name: 'Zafir Raihan Basri', gender: 'Laki-Laki', image: 'src/zafir.jpg' },
+  { name: 'Zalfa Zahirah', gender: 'Perempuan', image: 'src/zalfa.jpg' }
+];
+
+// ==========================================
+// 2. SISTEM HITUNG OTOMATIS
+// ==========================================
+const countMale = studentData.filter(s => s.gender === 'Laki-Laki').length;
+const countFemale = studentData.filter(s => s.gender === 'Perempuan').length;
+const countTotal = studentData.length;
+
 document.addEventListener('DOMContentLoaded', () => {
   initTopStatusBar();
   initPreloader();
@@ -19,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCurrentYear();
     initStarsBackground();
     initLanguageSwitcher();
+    initGalleryFilter();
     
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -32,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Device Top Status Bar (Jam, Sinyal, WiFi, Baterai)
 function initTopStatusBar() {
-  // 1. Update Jam Realtime (Format HH.MM)
   function updateBarTime() {
     const timeEl = document.getElementById('bar-time');
     if (timeEl) {
@@ -45,7 +88,6 @@ function initTopStatusBar() {
   setInterval(updateBarTime, 1000);
   updateBarTime();
 
-  // 2. Status Baterai Akurat
   const batteryLevelEl = document.getElementById('bar-battery-level');
   const batteryIcon = document.getElementById('bar-battery-icon');
 
@@ -58,10 +100,10 @@ function initTopStatusBar() {
         if (batteryIcon) {
           if (battery.charging) {
             batteryIcon.className = 'fas fa-battery-charging bar-battery-body';
-            batteryIcon.style.color = '#10b981'; // Hijau saat mengisi daya
+            batteryIcon.style.color = '#10b981'; 
           } else if (level <= 20) {
             batteryIcon.className = 'fas fa-battery-quarter bar-battery-body';
-            batteryIcon.style.color = '#ef4444'; // Merah jika baterai rendah
+            batteryIcon.style.color = '#ef4444'; 
           } else {
             batteryIcon.className = 'fas fa-battery-full bar-battery-body';
             batteryIcon.style.color = '#ffffff';
@@ -74,7 +116,6 @@ function initTopStatusBar() {
     });
   }
 
-  // 3. Status Jaringan Akurat
   const wifiIcon = document.getElementById('bar-wifi-icon');
   const signalIcon = document.getElementById('bar-signal-icon');
 
@@ -280,12 +321,13 @@ function initTypingEffect() {
 
 // Tabs System
 function initTabsSystem() {
-  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabButtons = document.querySelectorAll('.about-tabs .tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
   
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
       const tabId = button.getAttribute('data-tab');
+      if (!tabId) return; 
       
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
@@ -299,45 +341,19 @@ function initTabsSystem() {
 // Students Section (Dynamic Language)
 function initStudentsSection() {
   const studentsGrid = document.querySelector('.students-grid');
+  const totalStudentsSpan = document.getElementById('total-students');
+  
+  // Update otomatis total angka di header section siswa
+  if (totalStudentsSpan) {
+    totalStudentsSpan.textContent = countTotal;
+  }
+  
   if (!studentsGrid) return;
   studentsGrid.innerHTML = '';
   
   const currentLang = localStorage.getItem('language') || 'id';
-
-  const students = [
-    { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar.jpg' },
-    { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar.jpg' },
-    { name: 'Bagus Raditya Faturrahman', gender: 'Laki-Laki', image: 'src/bagus.jpg' },
-    { name: 'Damar Cahyo Panuluh', gender: 'Laki-Laki', image: 'src/damar.jpg' },
-    { name: 'Dewi Thoatika Nurjanah', gender: 'Perempuan', image: 'src/dewi.jpg' },
-    { name: 'Eka Puspita Novita Damayanti', gender: 'Perempuan', image: 'src/puspit.jpg' },
-    { name: 'Evan Al Rasyid', gender: 'Laki-Laki', image: 'src/evan.jpg' },
-    { name: 'Fadel Shafwan Maliki', gender: 'Laki-Laki', image: 'src/fadel.jpg' },
-    { name: 'Faqih Arya Pasha', gender: 'Laki-Laki', image: 'src/faqih.jpg' },
-    { name: 'Fazril Ilyas', gender: 'Laki-Laki', image: 'src/fazril.jpg' },
-    { name: 'Firdaus Ilham', gender: 'Laki-Laki', image: 'src/ilham.jpg' },
-    { name: 'Fitri Lailan Najmi', gender: 'Perempuan', image: 'src/fitri.jpg' },
-    { name: 'Intan Aliyana', gender: 'Perempuan', image: 'src/intan.jpg' },
-    { name: 'Jenius Hosevan Simon Panjaitan', gender: 'Laki-Laki', image: 'src/jenius.jpg' },
-    { name: 'Kayla Khalidah Tajudin', gender: 'Perempuan', image: 'src/kayla.jpg' },
-    { name: 'Keyla Nur Hasanah', gender: 'Perempuan', image: 'src/keyla.jpg' },
-    { name: 'Khoirul Anisa Putri', gender: 'Perempuan', image: 'src/kep.jpg' },
-    { name: 'Lequinsha Zalyandra Bilqis', gender: 'Perempuan', image: 'src/lequin.jpg' },
-    { name: 'Lintang Azzalea Pratama', gender: 'Perempuan', image: 'src/lintang.jpg' },
-    { name: 'Lutfiah Thalita Azmi', gender: 'Perempuan', image: 'src/tata.jpg' },
-    { name: 'Miftah Khoiron Ramadhan', gender: 'Laki-Laki', image: 'src/miftah.jpg' },
-    { name: 'Moura Dealova Kanza Adiba T.', gender: 'Perempuan', image: 'src/moura.jpg' },
-    { name: 'Muhammad Rizky Maulana', gender: 'Laki-Laki', image: 'src/jajat.jpg' },
-    { name: 'Nabilla Oktavia Andini', gender: 'Perempuan', image: 'src/okta.jpg' },
-    { name: 'Nova Zaidah', gender: 'Perempuan', image: 'src/nova.jpg' },
-    { name: 'Rayiandra Abinaya', gender: 'Laki-Laki', image: 'src/abi.jpg' },
-    { name: 'Rizqi Khoiril Ibad', gender: 'Laki-Laki', image: 'src/aril.jpg' },
-    { name: 'Steven Febrian Pratama', gender: 'Laki-Laki', image: 'src/steven.jpg' },
-    { name: 'Zafir Raihan Basri', gender: 'Laki-Laki', image: 'src/zafir.jpg' },
-    { name: 'Zalfa Zahirah', gender: 'Perempuan', image: 'src/zalfa.jpg' }
-  ];
   
-  students.forEach((student, index) => {
+  studentData.forEach((student, index) => {
     const card = document.createElement('div');
     card.className = 'student-card';
     card.style.animationDelay = `${index * 50}ms`;
@@ -447,7 +463,8 @@ function initLanguageSwitcher() {
       "about.tabApproach": "Karakter",
 
       "about.profileTitle": "Profil Kelas XI.1 Saintek",
-      "about.profileP1": "<strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>16 siswa laki-laki</strong> dan <strong>14 siswa perempuan</strong> yang memiliki semangat belajar tinggi.",
+      // MENYEMATKAN VARIABEL countMale DAN countFemale AGAR DINAMIS
+      "about.profileP1": `<strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>${countMale} siswa laki-laki</strong> dan <strong>${countFemale} siswa perempuan</strong> yang memiliki semangat belajar tinggi.`,
       "about.profileP2": "Kami adalah generasi muda yang siap menghadapi tantangan masa depan dengan bekal ilmu pengetahuan, keterampilan, dan karakter yang kuat. Di kelas ini, kami belajar bukan hanya untuk nilai, tetapi untuk menjadi pribadi yang bermanfaat bagi masyarakat.",
       "about.profileP3": "Dengan bimbingan dari Ibu Afrinawati, M.Pd sebagai wali kelas, kami selalu berusaha memberikan yang terbaik dalam setiap kegiatan akademik maupun non-akademik.",
 
@@ -544,7 +561,8 @@ function initLanguageSwitcher() {
       "about.tabApproach": "Character",
 
       "about.profileTitle": "Class Profile of XI.1 Saintek",
-      "about.profileP1": "<strong>XI.1 Saintek</strong> is an excellent class at SMA PGRI 3 Jakarta focusing on Science and Technology. This class consists of <strong>16 male students</strong> and <strong>14 female students</strong> with high learning enthusiasm.",
+      // MENYEMATKAN VARIABEL countMale DAN countFemale AGAR DINAMIS
+      "about.profileP1": `<strong>XI.1 Saintek</strong> is an excellent class at SMA PGRI 3 Jakarta focusing on Science and Technology. This class consists of <strong>${countMale} male students</strong> and <strong>${countFemale} female students</strong> with high learning enthusiasm.`,
       "about.profileP2": "We are a young generation ready to face future challenges equipped with knowledge, skills, and strong character. In this class, we learn not only for grades, but to become beneficial individuals for society.",
       "about.profileP3": "Under the guidance of Mrs. Afrinawati, M.Pd as our homeroom teacher, we always strive to give our best in every academic and non-academic activity.",
 
@@ -653,6 +671,38 @@ function initLanguageSwitcher() {
       initHomeroomSection();
       initStudentsSection();
       initTypingEffect();
+    });
+  });
+}
+
+// Gallery Filter System
+function initGalleryFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  if (!filterBtns.length || !galleryItems.length) return;
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Hapus status active dari semua tombol filter
+      filterBtns.forEach(b => b.classList.remove('active'));
+      
+      // 2. Berikan status active pada tombol yang diklik
+      btn.classList.add('active');
+      
+      // 3. Dapatkan kategori yang dipilih (all, foto, video, atau tiktok)
+      const filterValue = btn.getAttribute('data-filter');
+      
+      // 4. Sembunyikan atau tampilkan item sesuai dengan kategorinya
+      galleryItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        
+        if (filterValue === 'all' || filterValue === itemCategory) {
+          item.classList.remove('hide');
+        } else {
+          item.classList.add('hide');
+        }
+      });
     });
   });
 }

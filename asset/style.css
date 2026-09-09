@@ -1750,3 +1750,17 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Gallery Filters ===== */
+.gallery-filters .filter-btn {
+  flex: unset; 
+  padding: 0.5rem 1.25rem;
+}
+
+.gallery-item {
+  animation: fadeIn 0.5s ease;
+}
+
+.gallery-item.hide {
+  display: none;
+}
