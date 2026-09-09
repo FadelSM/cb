@@ -447,7 +447,7 @@ function initLanguageSwitcher() {
       "about.tabApproach": "Karakter",
 
       "about.profileTitle": "Profil Kelas XI.1 Saintek",
-      "about.profileP1": "<strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>18 siswa laki-laki</strong> dan <strong>15 siswa perempuan</strong> yang memiliki semangat belajar tinggi.",
+      "about.profileP1": "<strong>XI.1 Saintek</strong> adalah kelas unggulan di SMA PGRI 3 Jakarta yang berfokus pada bidang Sains dan Teknologi. Kelas ini terdiri dari <strong>16 siswa laki-laki</strong> dan <strong>14 siswa perempuan</strong> yang memiliki semangat belajar tinggi.",
       "about.profileP2": "Kami adalah generasi muda yang siap menghadapi tantangan masa depan dengan bekal ilmu pengetahuan, keterampilan, dan karakter yang kuat. Di kelas ini, kami belajar bukan hanya untuk nilai, tetapi untuk menjadi pribadi yang bermanfaat bagi masyarakat.",
       "about.profileP3": "Dengan bimbingan dari Ibu Afrinawati, M.Pd sebagai wali kelas, kami selalu berusaha memberikan yang terbaik dalam setiap kegiatan akademik maupun non-akademik.",
 
@@ -544,7 +544,7 @@ function initLanguageSwitcher() {
       "about.tabApproach": "Character",
 
       "about.profileTitle": "Class Profile of XI.1 Saintek",
-      "about.profileP1": "<strong>XI.1 Saintek</strong> is an excellent class at SMA PGRI 3 Jakarta focusing on Science and Technology. This class consists of <strong>18 male students</strong> and <strong>15 female students</strong> with high learning enthusiasm.",
+      "about.profileP1": "<strong>XI.1 Saintek</strong> is an excellent class at SMA PGRI 3 Jakarta focusing on Science and Technology. This class consists of <strong>16 male students</strong> and <strong>14 female students</strong> with high learning enthusiasm.",
       "about.profileP2": "We are a young generation ready to face future challenges equipped with knowledge, skills, and strong character. In this class, we learn not only for grades, but to become beneficial individuals for society.",
       "about.profileP3": "Under the guidance of Mrs. Afrinawati, M.Pd as our homeroom teacher, we always strive to give our best in every academic and non-academic activity.",
 
