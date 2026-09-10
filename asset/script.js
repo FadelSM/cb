@@ -533,6 +533,10 @@ function initLanguageSwitcher() {
       "gallery.g8Desc": "Lomba Estafet Spons Final XI.1 Saintek",
       "gallery.g9Title": "Lomba",
       "gallery.g9Desc": "Lomba Estafet Spons XI.1 Saintek",
+      "gallery.g10Title": "Pap Random",
+      "gallery.g10Desc": "XI.1 Saintek",
+      "gallery.g11Title": "Video Random",
+      "gallery.g11Desc": "XI.1 Saintek",
 
       "footer.built": "Hak cipta dilindungi undang-undang."
     },
