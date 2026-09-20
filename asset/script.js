@@ -5,7 +5,7 @@
 
 let typingTimeout = null;
 
-// 1. DATA SISWA GLOBAL (Bisa diakses dari mana saja)
+// DATA SISWA GLOBAL
 const studentData = [
   { name: 'Akhtar Jaya Wardhana', gender: 'Laki-Laki', image: 'src/akhtar.jpg' },
   { name: 'Azhar Aziz Hamdani', gender: 'Laki-Laki', image: 'src/azhar.jpg' },
@@ -39,7 +39,7 @@ const studentData = [
   { name: 'Zalfa Zahirah', gender: 'Perempuan', image: 'src/zalfa.jpg' }
 ];
 
-// 2. SISTEM HITUNG OTOMATIS
+// SISTEM HITUNG OTOMATIS
 const countMale = studentData.filter(s => s.gender === 'Laki-Laki').length;
 const countFemale = studentData.filter(s => s.gender === 'Perempuan').length;
 const countTotal = studentData.length;
@@ -684,16 +684,16 @@ function initGalleryFilter() {
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // 1. Hapus status active dari semua tombol filter
+      // Hapus status active dari semua tombol filter
       filterBtns.forEach(b => b.classList.remove('active'));
       
-      // 2. Berikan status active pada tombol yang diklik
+      // Berikan status active pada tombol yang diklik
       btn.classList.add('active');
       
-      // 3. Dapatkan kategori yang dipilih (all, foto, video, atau tiktok)
+      // Dapatkan kategori yang dipilih (all, foto, video, atau tiktok)
       const filterValue = btn.getAttribute('data-filter');
       
-      // 4. Sembunyikan atau tampilkan item sesuai dengan kategorinya
+      // Sembunyikan atau tampilkan item sesuai dengan kategorinya
       galleryItems.forEach(item => {
         const itemCategory = item.getAttribute('data-category');
         
